@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('git scm') {
             steps {
-                echo 'Hello World'
+             git 'https://github.com/Alimelu/spring3-mvc-maven-xml-hello-world.git'   
             }
         }
         
