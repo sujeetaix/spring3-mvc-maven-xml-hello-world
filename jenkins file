@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('git scm') {
             steps {
-             checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: '98dec7e6-d38e-4c48-bc07-87df0f83c8ef', url: 'https://github.com/Alimelu/spring3-mvc-maven-xml-hello-world.git']]]) 
+             checkout([$class: 'GitSCM', branches: [[name: '*/master']], url: 'https://github.com/Alimelu/spring3-mvc-maven-xml-hello-world.git']]]) 
             }
         }
         
