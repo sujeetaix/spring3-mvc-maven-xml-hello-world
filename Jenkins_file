@@ -1,11 +1,13 @@
 pipeline {
     agent any
 
-    stages {
-        stage('git') {
+
+    stages{
+        /*stage('build') {
+       
             steps {
                 git branch:'master', url:'https://github.com/Alimelu/spring3-mvc-maven-xml-hello-world.git'
             }
-        }
+        }*/
     }
 }
