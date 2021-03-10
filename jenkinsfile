@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Hello') {
             steps {
-                git branch:master, url:
+                git branch:'master', url:'https://github.com/Alimelu/spring3-mvc-maven-xml-hello-world.git'
             }
         }
     }
