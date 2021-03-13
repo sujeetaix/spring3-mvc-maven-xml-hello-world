@@ -1,0 +1,11 @@
+pipeline {
+    agent any
+         
+    stages {
+        stage('GIT CHECKOUT') {
+            steps {
+               checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Alimelu/spring3-mvc-maven-xml-hello-world.git']]])
+            }
+        }
+        }
+        }
