@@ -1,11 +1,17 @@
 pipeline {
     agent any
-         
+    environment {
+        PATH = "/opt/apache-maven-3.6.3/bin:$PATH"
+                }
     stages {
-        stage('GIT CHECKOUT') {
+       /* stage('GIT CHECKOUT') {
             steps {
                checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Alimelu/spring3-mvc-maven-xml-hello-world.git']]])
             }
+        }*/
+        stage('BUILD') {
+            steps {
+                sh "mvn clean package"
+            }
         }
-        }
-        }
+    }
