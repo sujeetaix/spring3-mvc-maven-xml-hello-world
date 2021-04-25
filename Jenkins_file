@@ -2,9 +2,9 @@ pipeline {
     agent any
     environment {
         PATH = "/opt/apache-maven-3.8.1/bin:$PATH"
-        registry = "sunku/dockernew"
-        registryCredential = "dockercredentials"
-        dockerImage = ''
+        //registry = "sunku/dockernew"
+        //registryCredential = "dockercredentials"
+        //dockerImage = ''
                 }
     stages {
        stage('GIT CHECKOUT') {
@@ -19,9 +19,7 @@ pipeline {
         }
         stage('Docker Build') {
            steps {
-             script{
-               dockerImage = docker.build registry + ":$BUILD_NUMBER"
-                }
+               sh 'docker build -t samplewebapp:latest .'
                 }
         }
     }
