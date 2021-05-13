@@ -2,9 +2,9 @@ pipeline {
     agent any
     environment {
         PATH = "/opt/apache-maven-3.8.1/bin:$PATH"
-        //registry = "sunku/dockernew"
-        //registryCredential = "dockercredentials"
-        //dockerImage = ''
+        registry = "sunku/dockernew"
+        registryCredential = "dockercredentials"
+        dockerImage = ''
                 }
     stages {
        stage('GIT CHECKOUT') {
