@@ -19,13 +19,13 @@ pipeline {
         }
         stage('Docker Build') {
            steps {
-               sh 'docker build -t samplewebapp:latest .'
+               sh 'docker build -t sunku/dockernew:7 .'
                 }
         }
         stage('Publish image to Docker Hub'){
             steps {
         withDockerRegistry([ credentialsId: "dockercredentials", url: "" ]) {
-          sh  'docker push sunku/samplewebapp:latest'
+          sh  'docker push sunku/dockernew:7'
           }
           }
           }
