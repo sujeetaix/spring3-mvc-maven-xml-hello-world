@@ -25,7 +25,7 @@ pipeline {
         stage('Publish image to Docker Hub'){
             steps {
         withDockerRegistry([ credentialsId: "dockercredentials", url: "" ]) {
-          sh  'docker push sunku/dockernew:7'
+          sh  'docker push sujeetdevop/abcd124:7'
           }
           }
           }
