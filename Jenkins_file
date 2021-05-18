@@ -2,14 +2,14 @@ pipeline {
     agent any
     environment {
         PATH = "/opt/apache-maven-3.8.1/bin:$PATH"
-        registry = "sunku/dockernew"
+        registry = "sujdetdevop/dockernew"
         registryCredential = "dockercredentials"
         dockerImage = ''
                 }
     stages {
        stage('GIT CHECKOUT') {
             steps {
-               checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Alimelu/spring3-mvc-maven-xml-hello-world.git']]])
+               checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/sujeetaix/spring3-mvc-maven-xml-hello-world.git']]])
             }
         }
         stage('BUILD') {
@@ -19,13 +19,13 @@ pipeline {
         }
         stage('Docker Build') {
            steps {
-               sh 'docker build -t sunku/dockernew:7 .'
+               sh 'docker build -t sujeetdevop/dockernew:7 .'
                 }
         }
         stage('Publish image to Docker Hub'){
             steps {
         withDockerRegistry([ credentialsId: "dockercredentials", url: "" ]) {
-          sh  'docker push sujeetdevop/abcd124:7'
+          sh  'docker push sujeetdevop/dockernew:7'
           }
           }
           }
